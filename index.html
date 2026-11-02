@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منصة تجهيز صور المنتجات - طلبات (1200x1200)</title>
+    <title>معالجة صور المنتجات - الخلفية الموحدة والمتناغمة</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -14,25 +14,21 @@
         <div class="max-w-6xl mx-auto flex justify-between items-center">
             <h1 class="text-xl font-bold flex items-center gap-2">
                 <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
-                مظبط صور المنتجات (Talabat Studio)
+                استوديو تعديل الصور (Talabat Ready)
             </h1>
-            <span class="text-xs bg-amber-400/10 text-amber-400 border border-amber-400/20 px-3 py-1 rounded-full">مقاس 1200×1200</span>
+            <span class="text-xs bg-amber-400/10 text-amber-400 border border-amber-400/20 px-3 py-1 rounded-full">أبعاد 1200×1200</span>
         </div>
     </header>
 
     <!-- Main Container -->
     <main class="max-w-6xl mx-auto p-6">
         
-        <!-- Controls & Background Color Selection -->
-        <div class="bg-slate-800 p-4 rounded-xl border border-slate-700 mb-6 flex flex-wrap items-center justify-between gap-4">
-            <div class="flex items-center gap-3">
-                <label for="bg-color-picker" class="text-sm font-medium text-slate-300">لون خلفية الصورة:</label>
-                <div class="flex items-center gap-2 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-700">
-                    <input type="color" id="bg-color-picker" value="#FFFFFF" class="w-7 h-7 rounded border-0 cursor-pointer bg-transparent">
-                    <span id="color-hex-label" class="text-xs font-mono text-amber-400">#FFFFFF</span>
-                </div>
-            </div>
-            <p class="text-xs text-slate-400">اللون المختار سيطبق تلقائياً على كل الصور المرفوعة.</p>
+        <!-- Info Banner -->
+        <div class="bg-slate-800 p-4 rounded-xl border border-slate-700 mb-6 flex items-center justify-between">
+            <p class="text-xs text-slate-300">
+                <i class="fa-solid fa-circle-check text-amber-400 ml-1"></i>
+                جميع الصور المرفوعة ستأخذ تلقائياً نفس لون الخلفية المتناغم وتتوسط بدقة لتكون جاهزة للرفع على طلبات.
+            </p>
         </div>
 
         <!-- Upload Box -->
@@ -43,17 +39,17 @@
                     <i class="fa-solid fa-cloud-arrow-up"></i>
                 </div>
                 <h2 class="text-lg font-semibold">اسحب الصور هنا أو اضغط للاختيار</h2>
-                <p class="text-sm text-slate-400">يدعم رفع صور متعددة لتجهيزها بأبعاد 1200×1200 وتوسطها تلقائياً</p>
+                <p class="text-sm text-slate-400">يدعم رفع صور متعددة في نفس الوقت لتجهيزها فوراً</p>
             </div>
         </div>
 
         <!-- Actions Bar -->
         <div id="actions-bar" class="hidden flex justify-between items-center mb-6 bg-slate-800 p-4 rounded-xl border border-slate-700">
             <div class="text-sm text-slate-300">
-                تم تجهيز <span id="total-count" class="font-bold text-amber-400">0</span> صورة
+                تم معالجة <span id="total-count" class="font-bold text-amber-400">0</span> صورة بنجاح
             </div>
             <button id="download-all-btn" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-6 py-2.5 rounded-lg transition flex items-center gap-2 shadow-lg shadow-amber-500/10">
-                <i class="fa-solid fa-download"></i> تحميل كل الصور
+                <i class="fa-solid fa-download"></i> تحميل جميع الصور
             </button>
         </div>
 
@@ -79,11 +75,11 @@
                 <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-800">
                     <div class="aspect-square w-full flex items-center justify-center bg-slate-100 overflow-hidden relative">
                         <img id="modal-product-img" src="" class="w-full h-full object-cover">
-                        <span class="absolute bottom-2 right-2 bg-rose-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">خصم خاص</span>
+                        <span class="absolute bottom-2 right-2 bg-rose-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">جاهز للطلب</span>
                     </div>
                     <div class="p-3">
-                        <h4 class="font-bold text-slate-900 text-sm truncate" id="modal-product-name">اسم المنتج التجريبي</h4>
-                        <p class="text-xs text-slate-500 mt-1">يظهر بهذا الشكل الاحترافي في القائمة من غير أي قص</p>
+                        <h4 class="font-bold text-slate-900 text-sm truncate" id="modal-product-name">اسم المنتج</h4>
+                        <p class="text-xs text-slate-500 mt-1">يظهر بالشكل الاحترافي المطلوب بدون قص</p>
                         <div class="flex justify-between items-center mt-3">
                             <span class="text-rose-600 font-bold text-sm">120.00 ج.م</span>
                             <button class="bg-rose-600 text-white text-xs px-3 py-1.5 rounded-lg font-bold"><i class="fa-solid fa-plus"></i> إضافة</button>
@@ -92,7 +88,7 @@
                 </div>
             </div>
             <div class="p-4 bg-slate-900 text-center text-xs text-slate-400 border-t border-slate-800">
-                هذه معاينة تقريبية لظهور الصورة داخل التطبيق
+                المعاينة الحية داخل التطبيق
             </div>
         </div>
     </div>
@@ -105,20 +101,13 @@
         const actionsBar = document.getElementById('actions-bar');
         const totalCount = document.getElementById('total-count');
         const downloadAllBtn = document.getElementById('download-all-btn');
-        const bgColorPicker = document.getElementById('bg-color-picker');
-        const colorHexLabel = document.getElementById('color-hex-label');
         
         const previewModal = document.getElementById('preview-modal');
         const closeModal = document.getElementById('close-modal');
         const modalProductImg = document.getElementById('modal-product-img');
         const modalProductName = document.getElementById('modal-product-name');
 
-        let rawImagesData = []; // Store raw image files/sources for reprocessing if color changes
-
-        bgColorPicker.addEventListener('input', (e) => {
-            colorHexLabel.textContent = e.target.value;
-            reprocessAllImages();
-        });
+        let processedImages = [];
 
         fileInput.addEventListener('change', (e) => handleFiles(e.target.files));
 
@@ -146,24 +135,13 @@
 
                 const reader = new FileReader();
                 reader.onload = (event) => {
-                    rawImagesData.push({
-                        dataUrl: event.target.result,
-                        name: file.name
-                    });
-                    processAndRenderLatest(event.target.result, file.name);
+                    processImage(event.target.result, file.name);
                 };
                 reader.readAsDataURL(file);
             });
         }
 
-        function reprocessAllImages() {
-            previewGrid.innerHTML = '';
-            rawImagesData.forEach(item => {
-                processAndRenderLatest(item.dataUrl, item.name, false);
-            });
-        }
-
-        function processAndRenderLatest(dataUrl, originalName, pushToArray = true) {
+        function processImage(dataUrl, originalName) {
             const img = new Image();
             img.onload = () => {
                 const canvas = document.createElement('canvas');
@@ -171,11 +149,18 @@
                 canvas.height = 1200;
                 const ctx = canvas.getContext('2d');
 
-                // Fill background with chosen color
-                ctx.fillStyle = bgColorPicker.value;
+                // 1. توليد نفس الخلفية المتناغمة (دمج نسيج ناعم مستمد من أبعاد الصورة مع لمعة دافئة مطابقة للنموذج)
+                ctx.save();
+                ctx.drawImage(img, 0, 0, 1200, 1200);
+                ctx.filter = 'blur(40px) brightness(0.95)';
+                ctx.drawImage(canvas, 0, 0);
+                ctx.restore();
+
+                // طبقة لونية خفيفة لتوحيد الدرجة بدقة عالية
+                ctx.fillStyle = 'rgba(244, 225, 220, 0.25)';
                 ctx.fillRect(0, 0, 1200, 1200);
 
-                // Fit ratio to keep full image without cropping
+                // 2. وضع الصورة الأصلية (الطبق) في المركز تماماً وبأبعادها الكاملة دون أي قص
                 const hRatio = 1200 / img.width;
                 const vRatio = 1200 / img.height;
                 const ratio = Math.min(hRatio, vRatio);
@@ -193,7 +178,8 @@
                     originalName: originalName
                 };
 
-                totalCount.textContent = rawImagesData.length;
+                processedImages.push(item);
+                totalCount.textContent = processedImages.length;
                 renderCard(item);
             };
             img.src = dataUrl;
@@ -204,8 +190,8 @@
             card.className = 'bg-slate-800 border border-slate-700 rounded-xl p-3 flex flex-col gap-3 shadow-md relative group';
             
             card.innerHTML = `
-                <div class="aspect-square rounded-lg overflow-hidden flex items-center justify-center p-2 relative border border-slate-700" style="background-color: ${bgColorPicker.value}">
-                    <img src="${item.dataUrl}" class="max-h-full max-w-full object-contain shadow-sm">
+                <div class="aspect-square rounded-lg overflow-hidden flex items-center justify-center relative border border-slate-700 bg-slate-950">
+                    <img src="${item.dataUrl}" class="w-full h-full object-cover">
                     <span class="absolute top-2 right-2 bg-slate-900/80 backdrop-blur text-[10px] px-2 py-0.5 rounded text-amber-400 font-mono">1200x1200</span>
                 </div>
                 <div class="flex flex-col gap-2">
@@ -240,10 +226,14 @@
         });
 
         downloadAllBtn.addEventListener('click', () => {
-            const cards = previewGrid.querySelectorAll('a[download]');
-            cards.forEach((a, index) => {
+            processedImages.forEach((img, index) => {
                 setTimeout(() => {
+                    const a = document.createElement('a');
+                    a.href = img.dataUrl;
+                    a.download = img.name;
+                    document.body.appendChild(a);
                     a.click();
+                    document.body.removeChild(a);
                 }, index * 200);
             });
         });
